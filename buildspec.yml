@@ -14,4 +14,4 @@ artifacts:
   files:
     - template.yaml
     - outputtemplate.yaml
-
+  discard-paths: yes
