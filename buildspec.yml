@@ -6,6 +6,7 @@ phases:
   build:
     commands:
       - pip install --upgrade pip
+      - python3 -m pip install --pre --upgrade
       - pip install python-boto3
       - pip install pipenv --user
       - pip install awscli aws-sam-cli
