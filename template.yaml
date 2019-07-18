@@ -24,6 +24,7 @@ Resources:
       CodeUri: hello_world/
       Handler: ec2.lambda_handler
       Runtime: python3.7
+      Policies: AWSLambdaExecute
       Events:
         GetEc2:
           Type: Api
