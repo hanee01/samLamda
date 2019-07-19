@@ -2,18 +2,19 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-        python: 3.7
+        #python: 3.7
+       - $runtimepython
   build:
     commands:
       - pip install --upgrade pip
       - pip install boto3
       - pip install pipenv --user
       - pip install awscli aws-sam-cli
-      - aws cloudformation package --template-file template.yaml --s3-bucket $s3bucketname --output-template-file outputtemplate.yaml
+      - aws cloudformation package --template-file $samTemplate --s3-bucket $s3bucketname --output-template-file $packageTemplate
 artifacts:
   type: zip
   files:
     #- '**/*'
-    - template.yaml
-    - outputtemplate.yaml
+    - $samTemplate
+    - $packageTemplate
   discard-paths: yes
