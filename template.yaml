@@ -21,12 +21,12 @@ Parameters:
   SomeVar:
     Type: String
 
-0      Events:
-        HelloWorld:
-          Type: Api
-          Properties:
-            Path: /hello
-            Method: get
+    Events:
+      HelloWorld:
+        Type: Api
+        Properties:
+          Path: /hello
+          Method: get
   GetEc2Function:
     Type: AWS::Serverless::Function
     Properties:
