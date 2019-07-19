@@ -11,7 +11,7 @@ Resources:
     Properties:
       CodeUri: hello_world/
       Handler: app.lambda_handler
-      Runtime: SOME_VAR #python3.7 #'{{runtime}}'
+      Runtime: python3.6 #'{{runtime}}'
       #Environment: 
           #Variables: '{{runtime}}'
       Environment:
