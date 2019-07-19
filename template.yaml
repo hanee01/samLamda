@@ -17,16 +17,16 @@ Resources:
       Environment:
         Variables:
           SOME_VAR: !Ref SomeVar
+      Events:
+        HelloWorld:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: get
 Parameters:
   SomeVar:
     Type: String
 
-    Events:
-      HelloWorld:
-        Type: Api
-        Properties:
-          Path: /hello
-          Method: get
   GetEc2Function:
     Type: AWS::Serverless::Function
     Properties:
