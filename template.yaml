@@ -11,9 +11,9 @@ Resources:
     Properties:
       CodeUri: hello_world/
       Handler: app.lambda_handler
-      Runtime: '{{runtime}}' #python3.7
-      Environment: 
-          Variables: '{{runtime}}'
+      Runtime: python3.7 #'{{runtime}}'
+      #Environment: 
+          #Variables: '{{runtime}}'
       Events:
         HelloWorld:
           Type: Api
