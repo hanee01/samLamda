@@ -4,6 +4,9 @@ Description: SAM EC2 regions
 Globals:
   Function:
     Timeout: 3
+Parameters:
+  SomeVar:
+    Type: String
 
 Resources:
   HelloWorldFunction:
@@ -11,21 +14,15 @@ Resources:
     Properties:
       CodeUri: hello_world/
       Handler: app.lambda_handler
-      Runtime: SOME_VAR #python3.6 #'{{runtime}}'
-      #Environment: 
-          #Variables: '{{runtime}}'
-      Environment:
-        Variables:
-          SOME_VAR: !Ref SomeVar
-      Events:
+      Runtime: SomeVar #python3.6 #'{{runtime}}'
+        SomeVar:
+          Ref: SomeVar
+       Events:
         HelloWorld:
           Type: Api
           Properties:
             Path: /hello
             Method: get
-            Parameters:
-              SomeVar:
-                Type: String
 
   GetEc2Function:
     Type: AWS::Serverless::Function
