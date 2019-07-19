@@ -9,7 +9,7 @@ phases:
       - pip install boto3
       - pip install pipenv --user
       - pip install awscli aws-sam-cli
-      - aws cloudformation package --template-file template.yaml --s3-bucket "{{ s3bucketname }}" --output-template-file outputtemplate.yaml
+      - aws cloudformation package --template-file template.yaml --s3-bucket $s3bucketname --output-template-file outputtemplate.yaml
 artifacts:
   type: zip
   files:
