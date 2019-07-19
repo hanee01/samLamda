@@ -1,9 +1,9 @@
 version: 0.2
 phases:
   install:
-    runtime-versions:
+    runtime-versions: $runtimepython
        #python: 3.7
-       $runtimepython
+       #$runtimepython
   build:
     commands:
       - pip install --upgrade pip
