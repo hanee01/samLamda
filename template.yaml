@@ -11,7 +11,7 @@ Resources:
     Properties:
       CodeUri: hello_world/
       Handler: app.lambda_handler
-      Runtime: python3.7
+      Runtime: "{{runtime}}" #python3.7
       Events:
         HelloWorld:
           Type: Api
@@ -23,7 +23,7 @@ Resources:
     Properties:
       CodeUri: hello_world/
       Handler: ec2.lambda_handler
-      Runtime: python3.7
+      Runtime: "{{runtime}}" #python3.7
       Policies: 
         - AWSLambdaExecute
         - AmazonEC2FullAccess
