@@ -10,7 +10,7 @@ phases:
       - pip install boto3
       - pip install pipenv --user
       - pip install awscli aws-sam-cli
-      - aws cloudformation package --template-file $samTemplate --s3-bucket $s3bucketname --output-template-file $packageTemplate
+      - aws cloudformation package --template-file $samTemplate --s3-bucket $s3bucketname --output-template-file $packageTemplate --parameter-overrides SomeVar=$runtime
 artifacts:
   type: zip
   files:
