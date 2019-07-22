@@ -21,9 +21,9 @@ Resources:
           Properties:
             Path: /hello
             Method: get
-Parameters:
-  SomeVar:
-    Type: String
+#Parameters:
+  #SomeVar:
+    #Type: String
 
   GetEc2Function:
     Type: AWS::Serverless::Function
