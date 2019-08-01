@@ -11,11 +11,7 @@ phases:
       - pip install pipenv --user
       - pip install awscli aws-sam-cli
       #- aws cloudformation package --template-file $samTemplate --s3-bucket $s3bucketname --output-template-file $packageTemplate
-      # create directory for deployment packages
-      - mkdir artifacts
-      # create staging deployment package
-      - mkdir artifacts/stg
-      - aws cloudformation package --template-file $samTemplate --s3-bucket $s3bucketname --output-template-file $packageTemplate --package artifacts/stg --stage stg -v
+      - aws cloudformation package --template-file $samTemplate --s3-bucket $s3bucketname --output-template-file $packageTemplate
   post_build:
     commands:
       - echo uploading the templates to S3
@@ -28,8 +24,7 @@ artifacts:
   type: zip
   files:
     #- '**/*'
-    - artifacts/**/*
     - $samTemplate
     - $packageTemplate
-    
+    - deploy.sh
   discard-paths: yes
