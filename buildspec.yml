@@ -17,7 +17,7 @@ phases:
       - zip -r sam.zip $samTemplate $packageTemplate
      # - aws s3 cp $samTemplateName s3://samtemplateversions/$samTemplateName && aws s3 cp $packagedTemplateName s3://samtemplateversions/$packagedTemplateName
       - current_time=$(date "+%Y.%m.%d-%H.%M.%S") 
-      - aws s3 cp sam.zip s3://samtemplateversions/$current_time.sam.zip
+      - aws s3 cp sam.zip s3://$s3bucketname/$current_time.sam.zip
       - echo Build completed on `date`
 artifacts:
   type: zip
