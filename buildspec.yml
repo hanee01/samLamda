@@ -2,7 +2,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-       python:10
+       python: 10
        #$runtimepython
   build:
     commands:
