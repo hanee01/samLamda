@@ -15,7 +15,7 @@ phases:
       # create staging deployment package
       - mkdir artifacts/stg
       #- aws cloudformation package --template-file $samTemplate --s3-bucket $s3bucketname --output-template-file $packageTemplate
-      - aws cloudformation package --template-file $samTemplate --s3-bucket $s3bucketname --output-template-file $packageTemplate 
+      - sam package --template-file $samTemplate --s3-bucket $s3bucketname --output-template-file $packageTemplate 
       
   post_build:
     commands:
